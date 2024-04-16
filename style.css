@@ -1,0 +1,180 @@
+:root {
+	--background-color: #e3e8ff;
+	--dots-color: #fff;
+}
+
+body {
+	background-color: var(--background-color);
+}
+
+.gallery {
+	/* User transform:scale to resize the gallery (desktop screen) */
+	transform: scale(1);
+	padding: 2rem;
+}
+
+.slider-wrapper {
+	position: relative;
+	max-width: 25%;
+	margin: 0 auto;
+}
+
+.slider {
+	display: flex;
+	aspect-ratio: 9/16;
+	overflow-x: hidden;
+	scroll-snap-type: x mandatory;
+	scroll-behavior: smooth;
+	box-shadow: 0 1.5rem 3rem -0.75rem hsla(0, 0%, 0%, 0.25);
+	border-radius: 0.5rem;
+}
+
+.slider img {
+	flex: 1 0 100%;
+	scroll-snap-align: start;
+	object-fit: cover;
+}
+
+.dots {
+	display: flex;
+	column-gap: 1rem;
+	position: absolute;
+	bottom: 1.25rem;
+	left: 50%;
+	transform: translateX(-50%);
+	z-index: 1;
+}
+
+.dots a {
+	/* Use transform:scale to resize the dots navbar (desktop screen) */
+	transform: scale(1);
+	width: 0.5rem;
+	height: 0.5rem;
+	border-radius: 50%;
+	background-color: var(--dots-color);
+	opacity: 0.75;
+	transition: opacity ease 250ms;
+}
+
+/* Animation: the dot will be clearer when mouse-hover */
+.dots a:hover {
+	opacity: 1;
+}
+/* Animation: the dot will be bigger when clicked */
+.dots a:visited {
+	transform: scale(1.2);
+}
+
+/* Adaptive setting: just change the scale, ex: scale(2) */
+/* mobile screen */
+@media only screen and (max-width: 768px) {
+	/* Gallery size */
+	.slider-wrapper {
+		max-width: 100%;
+	}
+	/* Dots navbar size */
+	.dots {
+		transform: scale();
+	}
+}
+/* ipad screen */
+@media only screen and (min-width: 769px) and (max-width: 1114px) {
+	/* Gallery size */
+	.slider-wrapper {
+		max-width: 100%;
+	}
+	/* Dots navbar size */
+	.dots {
+		transform: scale();
+	}
+}
+/* folding-mobile screen */
+@media only screen and (max-width: 400px) {
+	/* Gallery size */
+	.slider-wrapper {
+		max-width: 100%;
+	}
+	/* Dots navbar size */
+	.dots {
+		transform: scale();
+	}
+}
+/* Desktop Full Screen */
+@media only screen and (min-width: 1366px) and (min-height: 768px) {
+	/* Gallery size */
+	.slider-wrapper {
+		max-width: 30%;
+	}
+	/* Dots navbar size */
+	.dots {
+		transform: scale();
+	}
+}
+@media only screen and (min-width: 1115px) and (max-width: 1365px) {
+	/* Gallery size */
+	.slider-wrapper {
+		max-width: 37%;
+	}
+	/* Dots navbar size */
+	.dots {
+		transform: scale();
+	}
+}
+
+  button {
+    background-color: #92bfef; /* Warna latar belakang */
+    color: rgb(0, 0, 0); /* Warna teks */
+    padding: 10px 20px; /* Padding untuk membuat tombol lebih besar */
+    border: none; /* Menghilangkan border */
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 8px; /* Ukuran font */
+    margin: 2px 1px; /* Margin di sekitar tombol */
+    cursor: pointer; /* Mengubah kursor menjadi pointer saat dihover */
+    border-radius: 12px; /* Membuat sudut tombol menjadi bulat */
+    box-shadow: 0 9px #465186; /* Menambahkan efek bayangan */
+}
+
+button:hover {
+    background-color: #4c8baf; /* Warna latar belakang saat dihover */
+    box-shadow: 0 5px #1f274a; /* Menyesuaikan efek bayangan saat dihover */
+    transform: translateY(-2px); /* Membuat efek tombol ditekan */
+}
+.slider {
+	display: flex;
+	overflow-x: auto;
+	scroll-snap-type: x mandatory;
+  }
+  
+  .slider img {
+	scroll-snap-align: start;
+	flex-shrink: 0;
+	width: 100%;
+	height: auto;
+  }
+/* Mengubah scrollbar untuk semua elemen dan window */
+::-webkit-scrollbar {
+	width: 10px; /* Lebar scrollbar */
+  }
+  
+  /* Mengubah track scrollbar (bagian background) */
+  ::-webkit-scrollbar-track {
+	background: transparent; /* Membuat background transparan */
+  }
+  
+  /* Mengubah handle scrollbar (bagian yang dapat digeser) */
+  ::-webkit-scrollbar-thumb {
+	background: rgb(72, 209, 227); /* Warna kuning untuk handle */
+	border-radius: 10px; /* Membuat handle berbentuk lingkaran */
+  }
+  
+  /* Mengubah handle scrollbar saat di-hover */
+  ::-webkit-scrollbar-thumb:hover {
+	background: rgb(30, 136, 134); /* Warna kuning lebih gelap saat di-hover */
+  }
+/* Menghilangkan audio bar dari layout halaman */
+.audio-bar {
+	display: none;
+  }
+  
